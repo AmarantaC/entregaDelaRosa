@@ -1,0 +1,245 @@
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  background-image: url(img/fondo.png);
+  background-size: 1000px;
+  background-position: center;
+}
+
+.contenedor {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.imagen {
+  margin: 30px auto;
+  width: 80%;
+  max-width: 500px;
+}
+.imagen img {
+  width: 100%;
+}
+
+.boton {
+  display: flex;
+  margin: auto;
+  font-family: "Nixie One", cursive;
+  font-weight: 600;
+  width: auto;
+  padding: 4px 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(219, 174, 76);
+  border: none;
+}
+
+.boton:hover {
+  background-color: rgba(219, 174, 76, 0.8);
+  color: black;
+}
+
+h1 {
+  color: rgb(219, 174, 76);
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+p {
+  font-family: "Nixie One", cursive;
+  font-weight: 600;
+  color: rgb(219, 174, 76);
+}
+
+.inicio {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.inicio h1 {
+  font-family: "Nixie One", cursive;
+  text-align: center;
+  max-width: 400px;
+}
+.inicio .bienvenida {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.inicio .bienvenida .imagen {
+  border-radius: 50%;
+  border: 1px solid rgb(219, 174, 76);
+  background-image: url(img/inicio1.png);
+  background-size: cover;
+  background-position: center;
+}
+.inicio .bienvenida .imagen img {
+  border-radius: 50%;
+  -webkit-animation: rotate 15s infinite linear;
+          animation: rotate 15s infinite linear;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.inicio .bienvenida .botones {
+  width: 60%;
+  display: flex;
+  margin: auto;
+  max-width: 600px;
+  flex-wrap: wrap;
+  height: 30px;
+}
+.inicio .bienvenida .formulario {
+  display: flex;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  max-width: 400px;
+  flex-wrap: wrap;
+}
+.inicio .bienvenida .formulario .datos {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  margin: auto;
+  font-family: "Nixie One", cursive;
+  font-weight: 600;
+  color: black;
+  max-width: 600px;
+  background-image: url(img/fondo5.png);
+  background-size: 1200px;
+  background-position: center;
+}
+.inicio .bienvenida .formulario .datos .inputs {
+  width: 100%;
+  margin: auto;
+}
+.inicio .bienvenida .formulario .datos .inputs input {
+  border: none;
+  font-family: "Nixie One", cursive;
+  font-weight: 600;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  margin: 10px;
+}
+.inicio .bienvenida .formulario .datos .inputs input:focus {
+  background: none;
+  outline: none;
+}
+.inicio .bienvenida .formulario .datos .inputs #enviar {
+  display: flex;
+  margin: auto;
+  font-family: "Nixie One", cursive;
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+  background-color: rgb(255, 240, 206);
+}
+.inicio .bienvenida .formulario .datos .inputs #enviar:hover {
+  background-color: rgb(219, 174, 76);
+}
+.inicio .bienvenida .formulario .datos .inputs .errorMensaje {
+  color: red;
+  font-size: 12px;
+}
+.inicio .bienvenida .formulario .datos .cerrar {
+  cursor: pointer;
+  font-size: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  position: relative;
+  display: flex;
+}
+.inicio .bienvenida .formulario .datos .cerrar:hover {
+  color: red;
+}
+
+.usuarioHoroscopo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.usuario {
+  background-image: url(img/fondo.png);
+  background-size: 1000px;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  flex-direction: row;
+}
+.usuario .imagen {
+  max-width: 100%;
+}
+.usuario .saludo {
+  width: 80%;
+  margin: 20px auto;
+  align-items: center;
+}
+.usuario .saludo h1 {
+  font-family: "Limelight", cursive;
+  width: 100%;
+  font-size: 40px;
+}
+.usuario .menu {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  padding-bottom: 20px;
+  align-content: space-between;
+}
+@media all and (min-width: 800px) {
+  .usuario .saludo {
+    width: 30%;
+    padding: 5%;
+  }
+  .usuario .imagen {
+    max-width: 500px;
+  }
+}
+@media all and (min-width: 1200px) {
+  .usuario .menu {
+    width: 20%;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .usuario .menu .boton {
+    margin: 30px;
+  }
+}/*# sourceMappingURL=estilos.css.map */
