@@ -11,6 +11,8 @@ class Usuario {
 
 const usuarios = [];
 
+
+
 /*---------------- Signos -----------------*/
 
 class Signo{
@@ -40,6 +42,98 @@ const acuario = new Signo ("Acuario", 21, 31, 1, 19, 2, "Surgen nuevas gestiones
 const picis = new Signo ("Picis", 20, 29, 2, 20, 3, "No habrá vuelta atrás de las determinaciones que pretendes tomar en el día de hoy. Piensa dos veces antes de hacerlo.", "img/horoscopos/picis.jpg");
 
 const signos = [aries, tauro, geminis, cancer, leo, virgo, libra, escorpio, sagitario, capricornio, acuario, picis];
+
+/*-----------------Tarot------------------------*/
+class cartaTarot{
+    constructor(id,nombre, mensaje, img){
+        this.id = id;
+        this.nombre = nombre;
+        this.mensaje = mensaje;
+        this.img = img;               
+    }
+};
+
+const laLoca = new cartaTarot (
+    id = 0,
+    nombre = "La loca",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/0.jpg",
+);
+
+const laMaga = new cartaTarot (
+    id = 1,
+    nombre = "La Maga",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/1.jpg",
+);
+
+const laSumaSacerdotisa = new cartaTarot (
+    id = 2,
+    nombre = "La Suma Sacerdotisa",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/2.jpg",
+);
+
+const laEmperatriz = new cartaTarot (
+    id = 3,
+    nombre = "La Emperatriz",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/3.jpg",
+);
+
+const elEmperador = new cartaTarot (
+    id = 4,
+    nombre = "El Emperador",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/4.jpg",
+);
+
+const laSacerdotisa = new cartaTarot (
+    id = 5,
+    nombre = "La Sacerdotisa",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/5.jpg",
+);
+
+const losAmantes = new cartaTarot (
+    id = 6,
+    nombre = "Los Amantes",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/6.jpg",
+);
+
+const elCarruaje = new cartaTarot (
+    id = 7,
+    nombre = "El Carruaje",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/7.jpg",
+);
+
+const laFueza = new cartaTarot (
+    id = 8,
+    nombre = "La Fuerza",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/8.jpg",
+);
+
+const elHermitaño = new cartaTarot (
+    id = 9,
+    nombre = "El Hermitaño",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/9.jpg",
+);
+
+const elMundo = new cartaTarot (
+    id = 9,
+    nombre = "El Mundo",
+    mensaje = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+    img = "img/tarot/9.jpg",
+);
+
+const cartasTarot = [laLoca, laSumaSacerdotisa, laEmperatriz, elEmperador, laSacerdotisa, 
+    losAmantes, elCarruaje, laFueza, elHermitaño, elMundo];
+
+
 
 /*---------------- Almacenados -----------------*/
 

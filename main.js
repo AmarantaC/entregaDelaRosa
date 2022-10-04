@@ -1,6 +1,7 @@
-const contenedorInicio = document.getElementById("contenedorInicio");
 
 ///------ Creamos Botones Inicio -------///
+
+const contenedorInicio = document.getElementById("contenedorInicio");
 let botones = document.createElement("div");
 botones.innerHTML=`
 <button id="registro" class="boton">Registrate</button>
@@ -23,16 +24,17 @@ function formRegistro(){
             <i id="cerrar" class="material-symbols-outlined cerrar">close</i>
             <div class="input_area">
                 <label class="label" for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">                
+                <input type="text" id="nombre" name="nombre" class="input">                
             </div>
             <div class="input_area">
                 <label class="label" for="contraseña">Contraseña:</label>
-                <input type="password" id="contraseña" name="contraseña">                
+                <input type="password" id="contraseña" name="contraseña" class="input">                
             </div>            
             <div class="input_area">
                 <label class="label" for="fecha">Fecha de Nacimiento:</label>
-                <input type="date" id="fecha" name="fecha">
+                <input type="date" id="fecha" name="fecha" class="input">
             </div>
+            <div id="errorDatos"></div>
             <input type="submit" id="enviar" value="Enviar">
         </div>
         
@@ -62,13 +64,37 @@ funRegistro.addEventListener("submit", (e) => {
     const fecha = new Date (document.getElementById("fecha").value);
     let dia = fecha.getDate();
     let mes = fecha.getMonth()+1; 
+
+/*------------Validacion de datos---------------*/
+
+    
+let errorDatos = document.getElementById("errorDatos");
+let input = document.getElementsByClassName("input");
+
+ 
+    error = document.createElement("p");
+    error.classList.add("errorMensaje");
+    error.innerText=`
+        Complete todos los campos
+        `
+        let errores = document.getElementsByClassName("errorMensaje")
+
+        if(errores.length == 0){
+            for(let i = 0; i < input.length; i++){
+                input.value = " " && errorDatos.appendChild(error);     
+            }                   
+        }
+     
+/*-----------------Signo----------------*/
             
     for ( let Signo of signos){
-        if (((dia >= Signo.diaInicio )&&( dia <= Signo.diasMes) && (mes == Signo.mesInicio))||
-        ((dia >= 1 )&&( dia <= Signo.diaFin) && (mes == Signo.mesFin))){
+        if (((dia >= Signo.diaInicio )&&( dia <= Signo.diasMes)&&(mes == Signo.mesInicio))||
+        ((dia >= 1 )&&( dia <= Signo.diaFin)&&(mes == Signo.mesFin))){
             signoUsuario = Signo.nombre       
         }       
     }
+
+/*----------------Creacion de Usuario----------------*/
   
     const usuario = new Usuario (nombre, contraseña, fecha, signoUsuario);
     usuarios.push(usuario);
@@ -126,9 +152,10 @@ funIngresa.addEventListener("submit", (e) => {
    
     let nombreIngresa = document.getElementById("nombreIngresa").value;
     let contraseñaIngresa = document.getElementById("contraseñaIngresa").value;
-    const error = document.getElementById("error");
+    const error = document.getElementById("error");    
                 
     for ( let Usuario of usuariosAlmacenados){
+
         if ((nombreIngresa === Usuario.nombre)&(contraseñaIngresa === Usuario.contraseña)){             
             funIngresa.reset();
             cerrarForm(); 
@@ -138,8 +165,7 @@ funIngresa.addEventListener("submit", (e) => {
             signoValidado = signos.find(Signo => Signo.nombre === usuarioValidado.signoUsuario);
             console.log(signoValidado);
 
-            inicioUsuario()
-         
+            inicioUsuario();         
             
         }else{
             const errorElementos = document.getElementsByClassName("errorMensaje");            
@@ -149,10 +175,9 @@ funIngresa.addEventListener("submit", (e) => {
                 errorContraseña.innerHTML = `<p class="errorMensaje">Usuario o contraseña incorrectos</p>`;
                 error.appendChild(errorContraseña);                
             }     
-        } 
-        
+        }         
     }     
-    
+       
     function inicioUsuario(){
     
         let usuarioBienvenida = document.createElement("div");
@@ -166,8 +191,8 @@ funIngresa.addEventListener("submit", (e) => {
         <img src=${signoValidado.img} alt="${signoValidado.nombre}">
         </div>   
         <div class="menu" id="menu">
-        <!--<button id="otrosSignos" class="boton">Otros signos</button>
-        <button id="tarot" class="boton">Tarot</button>-->
+        <!--<button id="otrosSignos" class="boton">Otros signos</button>-->
+        <button id="tarot" class="boton">Tarot</button>
         <button id="salir" class="boton">Salir</button>
     </div> 
     `
@@ -183,18 +208,110 @@ funIngresa.addEventListener("submit", (e) => {
             usuarioHoroscopo.classList.remove("usuarioHoroscopo");      
         }
 
-        /*const botonTarot = document.getElementById("tarot")
-        botonTarot.addEventListener("click", leerTarot);
+        const botonTarot = document.getElementById("tarot")
+        botonTarot.addEventListener("click", leerTarot);        
         
-        function leerTarot(){
-            usuarioHoroscopo.removeChild(usuarioBienvenida);  
-            usuarioHoroscopo.classList.remove("usuarioHoroscopo");      
-        }*/
     }
             
 });
 
 }
+
+/*----------Funcion leer Tarot---------------*/
+
+const usuarioTarot = document.getElementById("usuarioTarot")
+
+function leerTarot(){
+    let inicioTarot = document.createElement("div");
+    inicioTarot.innerHTML = `
+<div class="contenedor">
+    <h1>¿Quieres saber que te depara en el futuro?</h1>
+    <div class="imagen">
+        <img src="img/inicio2.png" alt="manos">
+    </div>
+</div>
+<div class="contenedor" id="contenedorCartas">
+    <div class="contenedor_texto">
+        <h1>Elige una carta:</h1>
+    </div>
+    <div class="cartas">
+    <button class="carta">
+        <img src="img/carta.jpg" alt="carta a">
+    </button>
+    <button class="carta">
+        <img src="img/carta.jpg" alt="carta b">
+    </button>              
+    <button class="carta">
+        <img src="img/carta.jpg" alt="carta c">
+    </button>       
+    </div>                
+</div>   
+<div class="contenedor">
+<button id="salirTarot" class="boton">Salir</button>                  
+</div>   
+`
+inicioTarot.classList.add("usuario");
+usuarioTarot.classList.add("usuarioTarot");
+usuarioTarot.appendChild(inicioTarot); 
+
+const botonSalir = document.getElementById("salirTarot")
+botonSalir.addEventListener("click", salir);
+console.log(botonSalir);
+
+function salir(){
+usuarioTarot.removeChild(inicioTarot);  
+usuarioTarot.classList.remove("usuarioTarot");    
+}
+
+/*--------------Funcion leer cartas-------------*/
+
+let numSuerte = (Math.round(Math.random() * 10));
+let cartaSuerte = cartasTarot.find(cartaTarot => cartaTarot.id === numSuerte);
+const cartasSuerte = document.getElementsByClassName("carta");
+
+/*--------------Operadores Avanzados-------------*/
+
+for(let i = 0; i < cartasSuerte.length; i++){
+    cartasSuerte[i].addEventListener('click', leerCarta);    
+}
+console.log(cartaSuerte);
+/*------------Desestructuracion de Objeto-------------*/
+const {nombre, mensaje, img} = cartaSuerte;
+
+function leerCarta(){
+    lectura = document.createElement("div")
+            lectura.classList.add("usuario")
+            lectura.innerHTML= `
+            <div class="contenedor_texto">
+                <h1>${nombre}<h1>
+                <p>${mensaje}</p>
+            </div>
+            <div class="imagenTarot">
+                <img src=${img}>
+            </div>
+            <div class="contenedor">
+                <button id="salirCarta" class="boton">Salir</button>                  
+            </div>          
+            `     
+    usuarioTarot.appendChild(lectura);   
+    usuarioTarot.removeChild(inicioTarot); 
+
+    const botonSalirCarta = document.getElementById("salirCarta")
+    botonSalirCarta.addEventListener("click", salirCarta);
+    
+    function salirCarta(){
+    usuarioTarot.removeChild(lectura);  
+    usuarioTarot.classList.remove("usuarioTarot");    
+}
+}
+}
+
+
+
+
+
+
+
 
 
 
