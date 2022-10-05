@@ -102,8 +102,19 @@ let input = document.getElementsByClassName("input");
 
     localStorage.setItem("Usuario", JSON.stringify(usuarios));
 
+    Toastify({
+        text: "¡Registro correcto!",        
+        className: "info",
+        duration: 5000,
+        gravity: "top",
+        style: {
+            background: "rgba(219, 174, 76, 0.8)",
+        },
+    }).showToast();
+
     funRegistro.reset();
     cerrarForm();
+    
 });
 
 }
@@ -198,21 +209,41 @@ funIngresa.addEventListener("submit", (e) => {
     `
         usuarioBienvenida.classList.add("usuario");
         usuarioHoroscopo.classList.add("usuarioHoroscopo");
-        usuarioHoroscopo.appendChild(usuarioBienvenida);  
-        
+        usuarioHoroscopo.appendChild(usuarioBienvenida); 
+
+        Toastify({
+            text: "Bienvenido",        
+            className: "info",
+            duration: 2000,
+            gravity: "bottom",
+            style: {
+                background: "rgba(219, 174, 76, 0.8)",
+            },
+        }).showToast();
+             
         const botonSalir = document.getElementById("salir")
         botonSalir.addEventListener("click", salir);
         
         function salir(){
             usuarioHoroscopo.removeChild(usuarioBienvenida);  
-            usuarioHoroscopo.classList.remove("usuarioHoroscopo");      
+            usuarioHoroscopo.classList.remove("usuarioHoroscopo");  
+            Toastify({
+                text: "Adios",        
+                className: "info",
+                duration: 2000,
+                gravity: "bottom",
+                style: {
+                    background: "rgba(219, 174, 76, 0.8)",
+                },
+            }).showToast();
+                     
         }
 
         const botonTarot = document.getElementById("tarot")
         botonTarot.addEventListener("click", leerTarot);        
         
     }
-            
+    
 });
 
 }
@@ -224,9 +255,10 @@ const usuarioTarot = document.getElementById("usuarioTarot")
 function leerTarot(){
     let inicioTarot = document.createElement("div");
     inicioTarot.innerHTML = `
-<div class="contenedor">
     <h1>¿Quieres saber que te depara en el futuro?</h1>
-    <div class="imagen">
+<div class="contenedor">
+    
+    <div class="imagen_portada">
         <img src="img/inicio2.png" alt="manos">
     </div>
 </div>
@@ -260,7 +292,7 @@ console.log(botonSalir);
 
 function salir(){
 usuarioTarot.removeChild(inicioTarot);  
-usuarioTarot.classList.remove("usuarioTarot");    
+usuarioTarot.classList.remove("usuarioTarot"); 
 }
 
 /*--------------Funcion leer cartas-------------*/
@@ -301,7 +333,7 @@ function leerCarta(){
     
     function salirCarta(){
     usuarioTarot.removeChild(lectura);  
-    usuarioTarot.classList.remove("usuarioTarot");    
+    usuarioTarot.classList.remove("usuarioTarot");  
 }
 }
 }

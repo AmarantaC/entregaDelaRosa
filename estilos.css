@@ -4,8 +4,7 @@ body {
   display: flex;
   width: 100%;
   background-image: url(img/fondo.png);
-  background-size: 1000px;
-  background-position: center;
+  background-size: 1300px;
 }
 
 .contenedor {
@@ -16,27 +15,51 @@ body {
   margin: auto;
 }
 
-.imagen {
+.imagen_portada {
+  border-radius: 50%;
+  background-image: url(img/inicio1.png);
+  background-size: cover;
+  background-position: center;
   margin: 30px auto;
   width: 80%;
   max-width: 500px;
+  overflow: hidden;
 }
-.imagen img {
+.imagen_portada img {
   width: 100%;
+  border-radius: 50%;
+  -webkit-animation: rotate 15s infinite linear;
+          animation: rotate 15s infinite linear;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 .boton {
   display: flex;
   margin: auto;
-  font-family: "Limelight", cursive;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   width: auto;
-  padding: 4px 30px;
+  padding: 0px 30px;
   height: 30px;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   background-color: black;
-  color: rgb(219, 174, 76);
+  color: rgb(255, 255, 255);
   border: none;
 }
 
@@ -46,16 +69,17 @@ body {
 }
 
 h1 {
-  color: rgb(219, 174, 76);
+  color: rgb(255, 255, 255);
   width: 100%;
   display: flex;
   margin: auto;
-  font-family: "Limelight", cursive;
+  font-family: "Poppins", sans-serif;
   text-align: center;
+  padding: 20px;
 }
 
 p {
-  font-family: "Nixie One", cursive;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: rgb(219, 174, 76);
 }
@@ -81,33 +105,8 @@ p {
   display: flex;
   flex-wrap: wrap;
 }
-.inicio .bienvenida .imagen {
-  border-radius: 50%;
-  border: 1px solid rgb(219, 174, 76);
+.inicio .bienvenida .imagen_portada {
   background-image: url(img/inicio1.png);
-  background-size: cover;
-  background-position: center;
-}
-.inicio .bienvenida .imagen img {
-  border-radius: 50%;
-  -webkit-animation: rotate 15s infinite linear;
-          animation: rotate 15s infinite linear;
-}
-@-webkit-keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
 }
 .inicio .bienvenida .botones {
   width: 60%;
@@ -132,13 +131,11 @@ p {
   padding: 30px;
   display: flex;
   margin: auto;
-  font-family: "Nixie One", cursive;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: black;
   max-width: 600px;
-  background-image: url(img/fondo5.png);
-  background-size: 1200px;
-  background-position: center;
+  background-color: rgb(255, 255, 255);
 }
 .inicio .bienvenida .formulario .datos .inputs {
   width: 100%;
@@ -146,7 +143,7 @@ p {
 }
 .inicio .bienvenida .formulario .datos .inputs input {
   border: none;
-  font-family: "Nixie One", cursive;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   background-color: transparent;
   border-bottom: 1px solid black;
@@ -159,13 +156,13 @@ p {
 .inicio .bienvenida .formulario .datos .inputs #enviar {
   display: flex;
   margin: auto;
-  font-family: "Nixie One", cursive;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   padding: 10px;
   border: none;
   margin-top: 15px;
   cursor: pointer;
-  background-color: rgb(238, 221, 182);
+  background-color: rgb(255, 255, 255);
 }
 .inicio .bienvenida .formulario .datos .inputs #enviar:hover {
   background-color: rgb(219, 174, 76);
@@ -191,48 +188,48 @@ p {
 .usuarioHoroscopo {
   position: absolute;
   width: 100%;
-  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(img/fondo.png);
 }
 
 .usuario {
-  background-image: url(img/fondo.png);
-  background-size: 1000px;
-  background-position: center;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
   align-items: center;
   flex-direction: row;
+  height: 100%;
   min-height: 710px;
 }
 .usuario .imagen {
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 30px auto;
   display: flex;
 }
 .usuario .imagen img {
-  width: 100%;
+  width: 80%;
   max-width: 400px;
   margin: auto;
 }
 .usuario .saludo {
   width: 80%;
-  margin: 20px auto;
+  margin: auto;
   align-items: center;
 }
 .usuario .saludo h1 {
-  font-family: "Limelight", cursive;
+  font-family: "Poppins", sans-serif;
   width: 100%;
   font-size: 40px;
+  margin: 30px auto;
 }
 .usuario .menu {
   width: 100%;
   display: flex;
   margin: auto;
-  padding-bottom: 20px;
   align-content: space-between;
+  margin-bottom: 30px;
 }
 @media all and (min-width: 800px) {
   .usuario .saludo {
@@ -247,7 +244,9 @@ p {
 .usuarioTarot {
   position: absolute;
   width: 100%;
-  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(img/fondo.png);
 }
 .usuarioTarot .usuario {
   width: 100%;
@@ -257,28 +256,16 @@ p {
   margin: auto;
   align-items: center;
   flex-direction: row;
-  min-height: 760px;
+  min-height: 710px;
 }
-.usuarioTarot .usuario .imagen {
-  border-radius: 50%;
-  border: 1px solid rgb(219, 174, 76);
+.usuarioTarot .usuario h1 {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  font-size: 30px;
+  margin: auto;
+}
+.usuarioTarot .usuario .imagen_portada {
   background-image: url(img/tarot.jpg);
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
-.usuarioTarot .usuario .imagen img {
-  border-radius: 50%;
-  -webkit-animation: rotate 15s infinite linear;
-          animation: rotate 15s infinite linear;
-}
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
 }
 .usuarioTarot .usuario .contenedor {
   background-image: url(img/fondo.png);
@@ -304,7 +291,7 @@ p {
 }
 .usuarioTarot .usuario .cartas .carta img {
   width: 100%;
-  border: 1px solid rgb(238, 221, 182);
+  border: 1px solid rgb(255, 255, 255);
 }
 .usuarioTarot .usuario .cartas .carta:hover {
   width: 30%;
@@ -316,9 +303,9 @@ p {
   max-width: 500px;
 }
 .usuarioTarot .usuario .contenedor_texto h1 {
-  font-family: "Limelight", cursive;
+  font-family: "Poppins", sans-serif;
   width: 100%;
-  font-size: 40px;
+  font-size: 30px;
 }
 .usuarioTarot .usuario .contenedor_texto p {
   text-align: left;
@@ -332,6 +319,15 @@ p {
 }
 .usuarioTarot .usuario .imagenTarot img {
   width: 80%;
-  border: solid rgb(238, 221, 182) 1px;
+  border: solid rgb(255, 255, 255) 1px;
   margin: auto;
+}
+@media all and (min-width: 800px) {
+  .usuarioTarot .usuario .contenedor_texto {
+    width: 30%;
+    padding: 5%;
+  }
+  .usuarioTarot .usuario .imagen {
+    max-width: 500px;
+  }
 }/*# sourceMappingURL=estilos.css.map */
