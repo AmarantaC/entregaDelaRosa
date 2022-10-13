@@ -50,7 +50,7 @@ body {
 
 .boton {
   display: flex;
-  margin: auto;
+  margin: 10px auto;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   width: auto;
@@ -114,7 +114,6 @@ p {
   margin: auto;
   max-width: 600px;
   flex-wrap: wrap;
-  height: 30px;
 }
 .inicio .bienvenida .formulario {
   display: flex;

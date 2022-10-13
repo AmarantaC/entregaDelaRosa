@@ -51,7 +51,7 @@ body{
 
 .boton{            
     display: flex;
-    margin: auto;
+    margin:10px auto;
     font-family: $fuentePrincipal;
     font-weight: 600;
     width: auto;
@@ -118,8 +118,7 @@ p{
             display: flex;
             margin: auto;
             max-width: 600px;
-            flex-wrap: wrap;
-            height: 30px;          
+            flex-wrap: wrap;             
         }
 
         .formulario{
