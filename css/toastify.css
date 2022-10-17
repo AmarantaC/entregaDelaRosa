@@ -6,6 +6,11 @@
  * Copyright (C) 2018 Varun A P
  */
 
+ @font-face {
+    font-family: "Texto";
+    src: url("../fonts/Fashion Fetish Light.ttf");
+  }
+
 .toastify {
     padding: 12px 20px;
     color: #ffffff;
@@ -21,7 +26,8 @@
     text-decoration: none;
     max-width: calc(50% - 20px);
     z-index: 2147483647;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Texto";
+    font-size: 12px;
 }
 
 .toastify.on {
