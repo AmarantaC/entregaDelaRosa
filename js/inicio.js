@@ -131,7 +131,7 @@ fetch(horoscopos)
         const usuario = new Usuario (nombre, contraseña, fecha, signoUsuario);
         usuarios.push(usuario);
         console.log(usuarios);
-    
+
         localStorage.setItem("Usuario", JSON.stringify(usuarios));
     
         Toastify({
@@ -164,7 +164,7 @@ fetch(horoscopos)
 
 }
 
-/*----- Usuarios Almacenados ------*/
+/*---------------- Almacenados -----------------*/
 
 const usuariosAlmacenados = JSON.parse(localStorage.getItem("Usuario"));
 console.log(usuariosAlmacenados);
