@@ -3,15 +3,7 @@
     src: url("../fonts/Dolce Vita Light.ttf")
 }
 
-@font-face {
-    font-family: "Texto";
-    src: url("../fonts/Fashion\ Fetish\ Light.ttf")
-}
-
-@font-face {
-    font-family: "Strong";
-    src: url("../fonts/ROCKET\ WILDNESS.ttf")
-}
+$texto : 'Poiret One', cursive;
 
 $fondo1: #151516; 
 $color1: rgb(253, 194, 30);
@@ -76,7 +68,7 @@ p{
     margin: auto;
     text-align: center;
     color: $color1;
-    font-family: "texto";
+    font-family: $texto;
 }
 
 .botones{
@@ -91,7 +83,7 @@ p{
     flex-wrap: wrap;
 
     .boton{
-        font-family: "texto";
+        font-family: $texto;
         padding:0 30px;       
         margin: auto;
         font-size: 16px;
@@ -138,7 +130,7 @@ p{
         height: 100%;
         margin: auto;
         flex-wrap: wrap;
-        font-family: "Texto";
+        font-family: $texto;
         background-color: $color2;
         font-size: 14px;
     
@@ -158,7 +150,7 @@ p{
                     border: none;
                     font-weight: 600; 
                     margin: 10px; 
-                    font-family: "Texto";          
+                    font-family: $texto;          
                 }
     
                 input:focus{
@@ -173,7 +165,7 @@ p{
                     border: none;
                     margin-top: 15px; 
                     cursor: pointer;
-                    font-family: "Texto"; 
+                    font-family: $texto; 
                                             
                 }
 
