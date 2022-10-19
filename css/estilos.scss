@@ -8,7 +8,7 @@ $texto : 'Poiret One', cursive;
 $fondo1: #151516; 
 $color1: rgb(253, 194, 30);
 $color2: rgb(255, 255, 255);
-
+$color3: rgb(189, 189, 189);
 body{
     width: 100%;
     margin: 0px;
@@ -69,6 +69,7 @@ p{
     text-align: center;
     color: $color1;
     font-family: $texto;
+    font-size: 20px;
 }
 
 .botones{
@@ -86,10 +87,10 @@ p{
         font-family: $texto;
         padding:0 30px;       
         margin: auto;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 500;
         cursor: pointer;
-        color: $color1;
+        color: $color2;
     }
 
     .boton:hover{
@@ -132,7 +133,7 @@ p{
         flex-wrap: wrap;
         font-family: $texto;
         background-color: $color2;
-        font-size: 14px;
+        font-size: 18px;
     
         .datos{
             width: 100%;               
@@ -149,12 +150,14 @@ p{
                 input{
                     border: none;
                     font-weight: 600; 
+                    font-size: 18px;
                     margin: 10px; 
-                    font-family: $texto;          
+                    font-family: $texto; 
+                    border-bottom: .3px solid $color3;         
                 }
     
                 input:focus{
-                    background:none;
+                    background:transparent;
                     outline: none;      
                 }
     
@@ -166,6 +169,7 @@ p{
                     margin-top: 15px; 
                     cursor: pointer;
                     font-family: $texto; 
+                    font-size: 18px;
                                             
                 }
 
@@ -229,7 +233,6 @@ p{
     align-items: center;   
     display: flex;
     flex-wrap: wrap;
-
 
     .imagen{   
         

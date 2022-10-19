@@ -2,14 +2,6 @@
   font-family: "Titulo";
   src: url("../fonts/Dolce Vita Light.ttf");
 }
-@font-face {
-  font-family: "Texto";
-  src: url("../fonts/Fashion Fetish Light.ttf");
-}
-@font-face {
-  font-family: "Strong";
-  src: url("../fonts/ROCKET WILDNESS.ttf");
-}
 body {
   width: 100%;
   margin: 0px;
@@ -68,7 +60,8 @@ p {
   margin: auto;
   text-align: center;
   color: rgb(253, 194, 30);
-  font-family: "texto";
+  font-family: "Poiret One", cursive;
+  font-size: 20px;
 }
 
 .botones {
@@ -83,13 +76,13 @@ p {
   flex-wrap: wrap;
 }
 .botones .boton {
-  font-family: "texto";
+  font-family: "Poiret One", cursive;
   padding: 0 30px;
   margin: auto;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   cursor: pointer;
-  color: rgb(253, 194, 30);
+  color: rgb(255, 255, 255);
 }
 .botones .boton:hover {
   font-weight: 900;
@@ -139,9 +132,9 @@ p {
   height: 100%;
   margin: auto;
   flex-wrap: wrap;
-  font-family: "Texto";
+  font-family: "Poiret One", cursive;
   background-color: rgb(255, 255, 255);
-  font-size: 14px;
+  font-size: 18px;
 }
 .inicio .formulario .datos {
   width: 100%;
@@ -158,11 +151,13 @@ p {
 .inicio .formulario .datos .inputs input {
   border: none;
   font-weight: 600;
+  font-size: 18px;
   margin: 10px;
-  font-family: "Texto";
+  font-family: "Poiret One", cursive;
+  border-bottom: 0.3px solid rgb(189, 189, 189);
 }
 .inicio .formulario .datos .inputs input:focus {
-  background: none;
+  background: transparent;
   outline: none;
 }
 .inicio .formulario .datos .inputs #enviar {
@@ -172,7 +167,8 @@ p {
   border: none;
   margin-top: 15px;
   cursor: pointer;
-  font-family: "Texto";
+  font-family: "Poiret One", cursive;
+  font-size: 18px;
 }
 .inicio .formulario .datos .inputs #enviar:hover {
   color: rgb(253, 194, 30);
