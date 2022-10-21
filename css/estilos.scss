@@ -11,6 +11,7 @@ $color2: rgb(255, 255, 255);
 $color3: rgb(189, 189, 189);
 body{
     width: 100%;
+    height: 100%;
     margin: 0px;
     background-color: $fondo1; 
 }
@@ -22,7 +23,7 @@ body{
     align-items: center;   
     display: flex;
     flex-wrap: wrap;
-    margin: 10px auto;
+    margin: auto;
 }
 
 .caja{
@@ -33,7 +34,7 @@ body{
 
 .imagen{ 
     display: flex; 
-    width: 90%; 
+    width: 80%; 
     margin: auto; 
    
     img{
@@ -58,9 +59,9 @@ h1{
     text-align: center;
     font-family: "titulo"; 
     color: $color1;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 p{
@@ -179,7 +180,7 @@ p{
     
                 .errorMensaje{
                     color: red;
-                    font-size: 12px;
+                    font-size: 14px;
                 }                   
             } 
 
@@ -208,17 +209,28 @@ p{
     align-items: center;   
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-    .imagenUsuario{        
+    .imagenUsuario{  
         
+        overflow: hidden;
+        border-radius: 50%;      
+        background-size: cover;
+        background-position: center; 
+        border: solid black 1px;        
         display: flex; 
-        width: 90%; 
+        width: 80%; 
         margin: auto;         
    
         img{
             width: 100%;
-            border-radius: 50%;  
-            border: solid 1px black;            
+            border-radius: 50%;                
+            animation: rotate 40s infinite linear;  
+            @keyframes rotate {
+            0%  {-webkit-transform: rotate(0deg);}
+            100% {-webkit-transform: rotate(360deg);}        
+            }            
         }   
   
     }
@@ -233,9 +245,10 @@ p{
     align-items: center;   
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-    .imagen{   
-        
+    .imagen{  
         margin-bottom: 20px;
 
         img{
@@ -257,8 +270,7 @@ p{
         align-items: center;
         max-width: 500px;
         height: 100%;
-        flex-wrap: wrap;
-       
+        flex-wrap: wrap;       
     
         .signo{
             font-family: "Titulo";            

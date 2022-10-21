@@ -4,6 +4,7 @@
 }
 body {
   width: 100%;
+  height: 100%;
   margin: 0px;
   background-color: #151516;
 }
@@ -15,7 +16,7 @@ body {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  margin: 10px auto;
+  margin: auto;
 }
 
 .caja {
@@ -26,7 +27,7 @@ body {
 
 .imagen {
   display: flex;
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
 .imagen img {
@@ -50,9 +51,9 @@ h1 {
   text-align: center;
   font-family: "titulo";
   color: rgb(253, 194, 30);
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   font-size: 25px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 p {
@@ -175,7 +176,7 @@ p {
 }
 .inicio .formulario .datos .inputs .errorMensaje {
   color: red;
-  font-size: 12px;
+  font-size: 14px;
 }
 .inicio .formulario .datos .cerrar {
   cursor: pointer;
@@ -198,16 +199,32 @@ p {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .usuario .imagenUsuario {
+  overflow: hidden;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: solid black 1px;
   display: flex;
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
 .usuario .imagenUsuario img {
   width: 100%;
   border-radius: 50%;
-  border: solid 1px black;
+  -webkit-animation: rotate 40s infinite linear;
+          animation: rotate 40s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 .otrosSignos {
@@ -217,6 +234,8 @@ p {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .otrosSignos .imagen {
   margin-bottom: 20px;

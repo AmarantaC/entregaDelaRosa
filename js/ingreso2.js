@@ -21,20 +21,20 @@ function formIngreso(){
             <input type="submit" id="enviar" value="Enviar">
         </div>       
     </form>
-    `
-    ingreso.classList.add("formulario");
-    form.appendChild(ingreso);
-    form.removeChild(botones);
+`
+ingreso.classList.add("formulario");
+form.appendChild(ingreso);
+form.removeChild(botones);
 
-    const botonCerrar = document.getElementById("cerrar");
-    botonCerrar.addEventListener("click", cerrarForm);
+const botonCerrar = document.getElementById("cerrar");
+botonCerrar.addEventListener("click", cerrarForm);
 
-    function cerrarForm (){
-        form.removeChild(ingreso);
-        form.appendChild(botones);
-    }
+function cerrarForm (){
+    form.removeChild(ingreso);
+    form.appendChild(botones);
+}
 
-/*------ Funcion Ingreso ------*/
+/*----- Funcion Ingreso -----*/
 const funIngreso = document.getElementById("formIngreso");
 
 funIngreso.addEventListener("submit", (e) => {
@@ -42,29 +42,28 @@ funIngreso.addEventListener("submit", (e) => {
    
     let nombreIngreso = document.getElementById("nombreIngreso").value;
     let contraseñaIngreso = document.getElementById("contraseñaIngreso").value;
-    const error = document.getElementById("error");
-    const errorElementos = document.getElementsByClassName("errorMensaje");     
+    const error = document.getElementById("error");    
                 
     for ( let Usuario of usuariosAlmacenados){
+
         if ((nombreIngreso === Usuario.nombre)&(contraseñaIngreso === Usuario.contraseña)){             
             funIngreso.reset();
             cerrarForm(); 
-            bienvenida();                                        
-        }else{                     
+            binvenida();  
+                                      
+        }else{
+            const errorElementos = document.getElementsByClassName("errorMensaje");            
             funIngreso.reset();
-            errorDatos();              
+            errorContraseña = document.createElement("div");
+            if(errorElementos.length == 0){
+                errorContraseña.innerHTML = `<p class="errorMensaje">Usuario o contraseña incorrectos</p>`;
+                error.appendChild(errorContraseña);                
+            }     
         }         
     } 
-
-    function errorDatos(){
-        if(errorElementos.length == 0){
-            errorContraseña = document.createElement("div");   
-            errorContraseña.innerHTML = `<p class="errorMensaje">Usuario o contraseña incorrectos</p>`;
-            error.appendChild(errorContraseña);                                
-        } 
-    }
     
-    function bienvenida(){
+    function binvenida(){
+
         usuarioValidado = usuariosAlmacenados.find(Usuario => Usuario.nombre === nombreIngreso);
         console.log(usuarioValidado);     
             
@@ -76,8 +75,8 @@ funIngreso.addEventListener("submit", (e) => {
     
             let usuarioBienvenida = document.createElement("div");
             usuarioBienvenida.innerHTML = `
-            <div class="caja imagenUsuario" id="imagenUsuario">
-                <img src="img/inicio1.png" alt="${signoValidado.nombre}">
+            <div class="caja imagenUsuario">
+                <img src=${signoValidado.img} alt="${signoValidado.nombre}">
             </div>
             <div class="caja texto">
                 <h1>Hola <strong>${usuarioValidado.nombre}</strong></h1>
@@ -90,52 +89,46 @@ funIngreso.addEventListener("submit", (e) => {
                 <div class="boton" id="salir">Salir</div>    
             </div>
         </div>
-        `   
-
+        `
             seccion.removeChild(inicio);
             usuarioBienvenida.classList.add("usuario");                
-            seccion.appendChild(usuarioBienvenida); 
-
-            let imagen = document.getElementById("imagenUsuario");
-            imagen.style.backgroundImage = `url(${signoValidado.img})`;
-
-            console.log(imagen);
-            
+            seccion.appendChild(usuarioBienvenida);     
+    
             Toastify({
-                text: `¡Hola ${usuarioValidado.nombre}!`,        
+                text: `Bienvenidx ${usuarioValidado.nombre}`,        
                 className: "info",
-                duration: 4000,
+                duration: 2000,
                 gravity: "top",
                 style: {
                     background: "rgba(219, 174, 76, 0.8)",
                 },
             }).showToast();
-
-            /*------ Salir ------*/
                  
             const botonSalir = document.getElementById("salir")
-            botonSalir.addEventListener("click", ()=>{
+            botonSalir.addEventListener("click", salir);        
+            
+            function salir(){
+    
                 seccion.appendChild(inicio);
                 seccion.removeChild(usuarioBienvenida);
                 
                 Toastify({
-                    text: `Hasta pronto ${usuarioValidado.nombre}`,        
+                    text: `Adios ${usuarioValidado.nombre}`,        
                     className: "info",
                     duration: 2000,
                     gravity: "top",
                     style: {
                         background: "rgba(219, 174, 76, 0.8)",
                     },
-                }).showToast();       
-            });        
+                }).showToast();                     
+            } 
             
-            /*------ Menu Otros Signos ------*/
-
             const botonSignos = document.getElementById("otrosSignos")
             botonSignos.addEventListener("click", otrosSignos); 
             console.log(botonSignos);
     
             function otrosSignos(){
+    
                 menuSignos = document.createElement("div");
                 menuSignos.innerHTML= `
                 <div class="caja imagen">
@@ -144,7 +137,7 @@ funIngreso.addEventListener("submit", (e) => {
                 <div class="caja texto botones" id="signosMenu">
                 </div>
                 <div class="botones" id="botonesInicio">
-                    <div class="boton" id="regresar">Regresar</div>    
+                    <div class="boton" id="salir">Salir</div>    
                 </div>    
                 `   
                 seccion.removeChild(usuarioBienvenida);
@@ -153,52 +146,35 @@ funIngreso.addEventListener("submit", (e) => {
                 let signosMenu = document.getElementById("signosMenu");
     
                 signos.forEach(signo => {
-                    signosMenu.innerHTML += `<div class="boton signo" id="${signo.nombre}">${signo.nombre}</div>` 
+                    signosMenu.innerHTML += `<div class="boton signo" id="${signo.nombre}">${signo.nombre}</div>`               
                 });
 
-                /*------ Funcion  Otro Signo ------*/
+                let otrosSignos = document.getElementsByClassName("signo");
 
-                for (let signo of signos){
-                    let botonSigno = document.getElementById(`${signo.nombre}`);
-                    botonSigno.addEventListener("click", otroSigno); 
-                    
-                    function otroSigno(){
-                        console.log(`${signo.nombre}`);
-                        signoElegido = document.createElement("div");
-                        signoElegido.innerHTML= `
-                            <div class="caja imagenUsuario" id="imagenSigno">
-                                <img src="img/inicio1.png" alt="${signo.nombre}">
-                            </div>
-                            <div class="caja texto">
-                                <h1><strong>${signo.nombre}</strong></h1>
-                                <p>${signo.mensaje}</p>  
-                            </div>            
-                            <div class="botones" id="botonesInicio">
-                                <div class="boton" id="regresar">Regresar</div>    
-                            </div>     
-                            `
-                        seccion.removeChild(menuSignos);
-                        signoElegido.classList.add("usuario");                
-                        seccion.appendChild(signoElegido);
-                        
-                        let imagen = document.getElementById("imagenSigno");
-                        imagen.style.backgroundImage = `url(${signo.img})`;
-
-                        const botonRegresar = document.getElementById("regresar");
-                        botonRegresar.addEventListener("click", ()=>{
-                            seccion.appendChild(menuSignos);
-                            seccion.removeChild(signoElegido);
-                        })                                    
-                    }
+                                  
+                for(let i = 0; i < otrosSignos.length; i++) {
+                    otrosSignos[i].addEventListener('click', otroSigno);  
+                      
+                    otrosSignosId = otrosSignos.getElementById(``)                
                 }
+                function otroSigno(){
+                    console.log("hola");
+           
 
-                /*------ Regresar ------*/
+                }
+                    
+                    
+                
 
-                const botonRegresar = document.getElementById("regresar");
-                botonRegresar.addEventListener("click", ()=>{
-                    seccion.appendChild(usuarioBienvenida);
+
+    
+                const botonSalir = document.getElementById("salir")
+                botonSalir.addEventListener("click", salir);        
+            
+                function salir(){
                     seccion.removeChild(menuSignos);
-                })
+                    seccion.appendChild(usuarioBienvenida);
+                } 
     
             }
     
