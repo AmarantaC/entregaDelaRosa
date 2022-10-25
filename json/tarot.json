@@ -1,0 +1,81 @@
+
+
+[
+    {
+        "id" : 0,
+        "nombre" : "La loca",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img " : "img/tarot/0.jpg"
+    },
+
+    {
+        "id" : 1,
+        "nombre" : "La Maga",
+        "mensaje":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/1.jpg"
+    },
+
+    {
+        "id" : 2,
+        "nombre" : "La Suma Sacerdotisa",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/2.jpg"  
+    },
+
+    {
+        "id" : 3,
+        "nombre" : "La Emperatriz",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/3.jpg"
+    },
+
+    {
+        "id" : 4,
+        "nombre" : "El Emperador",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/4.jpg"
+    },
+
+    {
+        "id" : 5,
+        "nombre" : "La Sacerdotisa",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/5.jpg"
+    },
+
+    {
+        "id" : 6,
+        "nombre" : "Los Amantes",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/6.jpg"
+    },
+
+    {
+        "id" : 7,
+        "nombre" : "El Carruaje",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/7.jpg"
+    },
+
+    {
+        "id" : 8,
+        "nombre" : "La Fuerza",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/8.jpg"
+    },
+
+    {
+        "id" : 9,
+        "nombre" : "El Hermitaño",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/9.jpg"
+    },
+
+    {
+        "id" : 10,
+        "nombre" : "El Mundo",
+        "mensaje" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima perspiciatis consequuntur alias maxime reiciendis officia sunt neque vero consequatur ea et, eos nostrum saepe sint obcaecati facilis aliquid quaerat non?",
+        "img" : "img/tarot/9.jpg"
+    }   
+]
+

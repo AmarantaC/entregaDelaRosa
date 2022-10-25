@@ -6,6 +6,7 @@
 $texto : 'Poiret One', cursive;
 
 $fondo1: #151516; 
+$fondo2: #bb9f21; 
 $color1: rgb(253, 194, 30);
 $color2: rgb(255, 255, 255);
 $color3: rgb(189, 189, 189);
@@ -24,6 +25,13 @@ body{
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+}
+
+@media all and (max-width: 500px){
+    .seccion{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 .caja{
@@ -209,8 +217,6 @@ p{
     align-items: center;   
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
-    margin-bottom: 20px;
 
     .imagenUsuario{  
         
@@ -245,8 +251,7 @@ p{
     align-items: center;   
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
-    margin-bottom: 20px;
+
 
     .imagen{  
         margin-bottom: 20px;
@@ -290,4 +295,89 @@ p{
         }
     }
 
+}
+
+.tarot{
+
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    align-items: center;   
+    display: flex;
+    flex-wrap: wrap;
+
+    .imagenTarot{  
+        
+        overflow: hidden;
+        border-radius: 50%;  
+        background-image: url(../img/tarot.jpg);    
+        background-size: cover;
+        background-position: center; 
+        border: solid black 1px;        
+        display: flex; 
+        width: 80%; 
+        margin: auto;         
+   
+        img{
+            width: 100%;
+            border-radius: 50%;                
+            animation: rotate 40s infinite linear;  
+            @keyframes rotate {
+            0%  {-webkit-transform: rotate(0deg);}
+            100% {-webkit-transform: rotate(360deg);}        
+            }            
+        }   
+  
+    }
+
+    .cartas{
+         width: 90%;
+         display: flex;
+         margin: auto;
+         height: 200px;
+       
+        .carta{
+            cursor: pointer;
+            width: 25%;
+            margin: auto;
+            border: 1px solid rgba(238, 210, 118, 0.726);
+            display: flex;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        .carta:hover{
+            width: 28%;
+        }
+
+    }
+
+
+
+}
+
+.cartaElegida{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    align-items: center;   
+    display: flex;
+    flex-wrap: wrap;
+    
+    .imagenCarta{
+        width: 50%;
+        margin: auto;
+        display: flex;
+        
+       
+        img{
+            width: 100%;
+            margin: auto;
+            max-width: 300px;
+            border: solid $color2 1px; 
+            border-radius: 5%;
+        }
+    }
 }

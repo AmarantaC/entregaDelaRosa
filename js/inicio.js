@@ -19,6 +19,7 @@ console.log(usuariosAlmacenados);
 /*----- Rutas Json ------*/
 
 const horoscopos = "json/horoscopos.json";
+const tarot = "json/tarot.json";
 
 /*------Inicio-----*/
 

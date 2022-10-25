@@ -32,12 +32,10 @@ function formRegistro(){
     form.removeChild(botones);
 
     const botonCerrar = document.getElementById("cerrar");
-    botonCerrar.addEventListener("click", cerrarForm);
-
-    function cerrarForm (){
+    botonCerrar.addEventListener("click", ()=>{
         form.removeChild(registro);
         form.appendChild(botones);
-    }
+    });
 
     const formRegistro = document.getElementById("formRegistro");
     formRegistro.addEventListener("submit", (e) => {        
@@ -53,7 +51,7 @@ function formRegistro(){
             errorDatos();
             formRegistro.reset();
         }else{
-            altaUsuario();        
+            altaUsuario();    
         }
 
         function errorDatos(){                            
@@ -89,14 +87,15 @@ function formRegistro(){
                 const usuario = new Usuario (nombre, contraseña, fecha, signoUsuario);
                 usuarios.push(usuario);
        
-                localStorage.setItem("Usuario", JSON.stringify(usuarios));               
-                                  
+                localStorage.setItem("Usuario", JSON.stringify(usuarios));                                                  
             })
-            
+                                  
             .catch(error => console.log(error))
             .finally(() => console.log("Proceso Finalizado")
             );
         }
+
+
       
     }); 
 
